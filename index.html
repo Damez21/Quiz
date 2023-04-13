@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,22 +8,25 @@
     <link rel="stylesheet" href="style.css">
     <title>NBA Quiz</title>
 </head>
-<body>
-    <div class="start-btn"><button>Start NBA Quiz</button></div>
 
-    <div class="header-box"
+<body>
+    <div class="start-btn ">
+        <button id="start-btn">Start NBA Quiz</button>
+    </div>
+
+    <div class="header-box">
         <header>
             <div class="title">Damez NBA Fandom Quiz</div>
             <div class="timer">
                 <div class="time-text">Time Remaining</div>
                 <div class="timer-sec">10</div>
-            </div>    
+            </div>
         </header>
 
-    
+    </div>
 
-    <div class="container">
-        <div id="quiz-container" class="hide">
+    <div class="container hide">
+        <div id="quiz-container">
             <div id="question">Question:</div>
             <div id="answer-buttons" class="btn-grid">
                 <button class="btn"> Answer 1</button>
@@ -33,7 +37,7 @@
         </div>
 
 
-        <div class ="buttons">
+        <div class="buttons">
             <!-- <button id="start-btn" class="start-btn btn">Start</button> -->
             <button id="quit-btn" class="quit-btn btn">Leave Quiz</button>
             <button id="next-btn" class="next-btn btn">Next</button>
@@ -41,7 +45,8 @@
     </div>
 
 
-
+    <script src="questions.js"></script>
     <script src="script.js"></script>
 </body>
+
 </html>

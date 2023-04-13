@@ -1,19 +1,16 @@
-var startButton = document.querySelector('#start-btn')
-var questionContainer = document.querySelector('.container')
-var startContainer = document.querySelector('.start-btn')
+var questions = [
+    {
+        question: "Who Was The 1st Overall Pick In The 2003 Nba Draft???",
+        choices:['Chris Bosh','Dwayne Wade', 'Chris Paul', 'Lebron James'],
+        answer:'Lebron James'
+    },
+    {},
+    {},
+    {},
+    {},
+    {},
+];
 
-
-
-
-function startGame() {
-    questionContainer.classList.remove('hide')
-    startContainer.classList.add('hide')
-}
-
-startButton.addEventListener('click', startGame)
-
-
-questions
 
 
 // Who Was The 1st Overall Pick In The 2003 Nba Draft???
