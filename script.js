@@ -1,4 +1,12 @@
-console.log("NBA Quiz")
+var startButton = document.getElementById('start-btn')
+
+startButton.addEventListener('click', startGame)
+
+function startGame() {
+    console.log('Started')
+}
+
+
 
 // Who Was The 1st Overall Pick In The 2003 Nba Draft???
 // Chris Bosh
