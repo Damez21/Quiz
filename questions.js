@@ -31,7 +31,18 @@ var questions = [
         choices: ['Michael Jordan', 'Kobe Bryant', 'Wilt Chamberlin', 'Andrew Bynum'],
         answer: 'Andrew Bynum'
     },
+    {
+        question: "Which Player Holds The Most All Time Stats On The U.S. Olympic Team?",
+        choices: ['Bill Russel', 'Carmelo Anthony', 'Lebron James', 'Michael Jordan'],
+        answer: 'Carmelo Anthony'
+    },
+    {
+        question: "How Many Championships Does Michael Jordan Have?",
+        choices: ['6', '8', '5', '3'],
+        answer: '6'
+    },
 ];
+
 
 
 
