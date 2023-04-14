@@ -7,12 +7,12 @@ body {
     align-items: center;
 }
 
-.start-btn{
+#start-btn{
     position: absolute;
     top: 30%;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: center; 
 }
 
 .start-btn button{
@@ -26,12 +26,11 @@ body {
 
 }
 
-.header-box{
+.header-box
 
-
-}
 .hide{
     display: none !important;
+
 }
 .container{
     width: 600px;

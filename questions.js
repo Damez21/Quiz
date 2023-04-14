@@ -1,19 +1,41 @@
 var questions = [
     {
-        question: "Who Was The 1st Overall Pick In The 2003 Nba Draft???",
+        question: "Who Was The 1st Overall Pick In The 2003 Nba Draft?",
         choices:['Chris Bosh','Dwayne Wade', 'Chris Paul', 'Lebron James'],
         answer:'Lebron James'
     },
-    {},
-    {},
-    {},
-    {},
-    {},
+    { 
+        question: "How Many NBA Championships Does Kobe Bryant Have?",
+        choices:['2','5', '4', '6'],
+        answer:'5'
+
+    },
+    {
+        question: "In What Season Did The NBA 'Bubble' Take Place?",
+        choices:['2018-2019','2021-2022', '2019-2020', '2020-2021'],
+        answer:'2019-2020'
+
+    },
+    {
+        question: "Who Is The ALL TIME Leader In 3pt Made?",
+        choices: ['Ray Allen', 'Stephen Curry', 'Reggie Miller', 'James Harden'],
+        answer: 'Stephen Curry'
+    },
+    {
+        question: "How Many 3 pointers Did Shaquile O'Neal Make In His Career?",
+        choices: ['1', '0', '5', '25'],
+        answer: '1'
+    },
+    {
+        question: "Who Was The Youngest Player To Ever Play In An NBA Game?",
+        choices: ['Michael Jordan', 'Kobe Bryant', 'Wilt Chamberlin', 'Andrew Bynum'],
+        answer: 'Andrew Bynum'
+    },
 ];
 
 
 
-// Who Was The 1st Overall Pick In The 2003 Nba Draft???
+// Who Was The 1st Overall Pick In The 2003 Nba Draft?
 // Chris Bosh
 // Dwayne Wade
 // Chris Paul
@@ -33,7 +55,7 @@ var questions = [
 
 // Who Is The ALL TIME Leader In 3pt Made?
 // Ray Allen
-// Steph Curry
+// Stephen Curry
 // Reggie Miller
 // James Harden
 

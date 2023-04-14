@@ -1,20 +1,46 @@
 var startButton = document.querySelector('#start-btn')
 var questionContainer = document.querySelector('.container')
 var startContainer = document.querySelector('.start-btn')
+var questions
+var randomizedQuestions, currentQuestionIndex
+var answerButtonElement = document.querySelector('answer-buttons')
+var questionsElement = document.querySelector('questions')
 
-
-
-
-function startGame() {
-    questionContainer.classList.remove('hide')
-    startContainer.classList.add('hide')
-}
 
 startButton.addEventListener('click', startGame)
 
+function startGame() {
+    startContainer.classList.add('hide')
+    questionContainer.classList.remove('hide')
+    // startContainer.classList.add('hide')
 
-questions
+randomizedQuestions = questions.sort(() => Math.random() )
+ currentQuestionIndex = 0
+    setNextQuestion()
+}
 
+function setNextQuestion() {
+    showQuestion(randomizedQuestions[currentQuestionIndex])
+ }
+
+function showQuestion(questions) {
+    questionsElement.innerText = questions.questions
+    questions.answer.forEach(element => {
+        var answerButtons = document.createElement('answer-buttons')
+        answerButtons.innerText = answer.text 
+        answerButtons.classList.add('btn')
+        if (answer.correct) {
+            answerButtons.dataset.correct = answer.correct
+        }
+        answerButtons.addEventListener('click', selectAnswer)
+        answerButtonElement.appendchild(answerButtons)
+    });
+
+}
+
+function selectAnswer() {
+
+ }
 
 // Who Was The 1st Overall Pick In The 2003 Nba Draft???
 // Chris Bosh
