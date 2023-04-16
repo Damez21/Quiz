@@ -1,60 +1,67 @@
 var startButton = document.querySelector('#start-btn')
 var nextButton = document.querySelector('#next-btn')
 var quitButton = document.querySelector('#quit-btn')
-var resetButton = document.querySelector('#restart')
+var restartButton = document.querySelector('#restart')
+var answerButtons = document.querySelector('#answer-buttons')
 var startContainer = document.querySelector('.start-btn')
 var questionContainer = document.querySelector('.container')
 var resultsContainer = document.querySelector('.results-container')
 var timeRemaing = document.querySelector('.timer-sec')
 var totalQuestions = document.querySelector('.number-of-questions')
+var results = document.querySelector('#results')
+var questionCount;
+var scoreCount = 0;
+var count = 8;
+var countdown;
 
-var questions = [
+
+var questionsArray = [
     {
-        id:"1",
+        id:"0",
         question: "Who Was The 1st Overall Pick In The 2003 Nba Draft?",
         choices:['Chris Bosh','Dwayne Wade', 'Chris Paul', 'Lebron James'],
         answer:'Lebron James'
     },
     { 
-        id:"2",
+        id:"1",
         question: "How Many NBA Championships Does Kobe Bryant Have?",
         choices:['2','5', '4', '6'],
         answer:'5'
 
     },
     {
-        id:"3",
+        id:"2",
         question: "In What Season Did The NBA 'Bubble' Take Place?",
         choices:['2018-2019','2021-2022', '2019-2020', '2020-2021'],
         answer:'2019-2020'
 
     },
     {
-        id:"4",
+        id:"3",
         question: "Who Is The ALL TIME Leader In 3pt Made?",
         choices: ['Ray Allen', 'Stephen Curry', 'Reggie Miller', 'James Harden'],
         answer: 'Stephen Curry'
     },
     {
-        id:"5",
+        id:"4",
         question: "How Many 3 pointers Did Shaquile O'Neal Make In His Career?",
         choices: ['1', '0', '5', '25'],
         answer: '1'
     },
     {
-        id:"6",
+        id:"5",
         question: "Who Was The Youngest Player To Ever Play In An NBA Game?",
         choices: ['Michael Jordan', 'Kobe Bryant', 'Wilt Chamberlin', 'Andrew Bynum'],
         answer: 'Andrew Bynum'
     },
     {
-        id:"7",
+        id:"6",
         question: "Which Player Holds The Most All Time Stats On The U.S. Olympic Team?",
         choices: ['Bill Russel', 'Carmelo Anthony', 'Lebron James', 'Michael Jordan'],
         answer: 'Carmelo Anthony'
     },
     {
-        id:"8",
+        id:"7",
         question: "How Many Championships Does Michael Jordan Have?",
         choices: ['6', '8', '5', '3'],
         answer: '6'
@@ -63,7 +70,6 @@ var questions = [
 
 
 
-// var questions = []
 // // var randomizeQuestions, currentQuestionIndex
 // // var answerButtonElement = document.querySelector('answer-buttons')
 // // var questionsElement = document.querySelector('questions')
@@ -77,3 +83,62 @@ function startGame() {
 
 startButton.addEventListener('click', startGame)
 
+restart.addEventListener("click", () => {
+    initial();
+    questionContainer.classList.remove("hide")
+    resultsContainer.classList.add("hide")
+});
+
+nextButton.addEventListener("click", (displayNext = () =>{
+    questionCount += 1;
+
+    if(questionCount == questionsArray.length){
+        container.classList.add("hide");
+        resultsContainer.remove("hide");
+        results.innerHTML = "You answer is " +
+        scoreCount + " out of " + questionCount;
+    }
+    else{
+        totalQuestions.innerHTML = questionCount + 1 + " of " + questionsArray.length + "Questions";
+
+        questionDisplay(questionCount);
+        count = 11;
+        clearInterval(countdown);
+        timerDisplay();
+    }
+
+}))
+
+var timerDisplay = () => {
+    countdown = setInterval(() => {
+        count--;
+        timeRemaing.innerHTML = `${count}s`;
+        if (count == 0) {
+            clearInterval(countdown);
+            displayNext();
+        }
+    }, 1000);
+};
+
+var questionDisplay = (questionCount) =>{
+    let questionCards = document.querySelectorAll(".container-mid");
+
+    questionCards.forEach((card) =>{
+        card.classList.add("hide");
+    });
+    questionCards[questionCount].classList.remove("hide");
+};
+
+function questionCreator() {
+    questionsArray.sort(() => Math.random() - 0.5);
+    
+    for (let i of questionsArray) {
+        i.answersButtons.sort(() => Math.random() - 0.5);
+        let div = document.createElement("div");
+        div.classList.add("container-mid", "hide");
+
+        totalQuestions.innerHTML = 1 + " of " + questionsArray. length + "Questions";
+
+
+    }
+}
