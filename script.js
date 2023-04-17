@@ -11,7 +11,7 @@ var totalQuestions = document.querySelector('.number-of-questions')
 var results = document.querySelector('#results')
 var questionCount;
 var scoreCount = 0;
-var count = 8;
+var count = 15;
 var countdown;
 
 
@@ -83,6 +83,8 @@ function startGame() {
 
 startButton.addEventListener('click', startGame)
 
+
+
 restart.addEventListener("click", () => {
     initial();
     questionContainer.classList.remove("hide")
@@ -102,7 +104,7 @@ nextButton.addEventListener("click", (displayNext = () =>{
         totalQuestions.innerHTML = questionCount + 1 + " of " + questionsArray.length + "Questions";
 
         questionDisplay(questionCount);
-        count = 11;
+        count = 15;
         clearInterval(countdown);
         timerDisplay();
     }
@@ -126,7 +128,7 @@ var questionDisplay = (questionCount) =>{
     questionCards.forEach((card) =>{
         card.classList.add("hide");
     });
-    questionCards[questionCount].classList.remove("hide");
+    // questionCards[questionCount].classList.remove("hide");
 };
 
 function questionCreator() {
@@ -139,6 +141,70 @@ function questionCreator() {
 
         totalQuestions.innerHTML = 1 + " of " + questionsArray. length + "Questions";
 
+        let question_div = document.createElement("p");
+        question_div.classList.add("question");
+        question_div.innerHTML = i.question;
+        div.appendChild(question_DIV);
 
+        div.innerHTML += `
+        <button class="btn" onclick="checker(this)">
+        ${i.answer[0]}</button
+        <button class="btn" onclick="checker(this)">
+        ${i.answer[1]}</button
+        <button class="btn" onclick="checker(this)">
+        ${i.answer[2]}</button
+        <button class="btn" onclick="checker(this)">
+        ${i.answer[3]}</button
+        
+        `;
+
+        questionContainer.appendChild(div);
     }
 }
+
+function checker(userAnswer){
+    let userSolution = userAnswer.innerText;
+    let question = document.getElementsByClassName("container-mid")[questionCount];
+    let answers = question.querySelectorAll("answer-div");
+
+    if(userSolution === questionsArray[questionCount].correct) {
+        userAnswer.classList.add("correct");
+        scoreCount++;
+    } else {
+        userAnswer.classList.add("incorrect");
+
+        answers.forEach((element) => {
+            if ((element.innerText = questionsArray[questionCount].correct)) {
+                element.classList.add("correct");
+            }
+        });
+    }
+    
+    clearInterval(countdown);
+    answers.forEach((element) => {
+        element.disabled = true;
+    });
+}
+
+function initial() {
+    questionContainer.innerHTML = "";
+    questionCount = 0;
+    scoreCount = 0;
+    scoreCount = 0;
+    count = 15;
+    clearInterval(countdown);
+    timerDisplay();
+    questionCreator();
+    questionDisplay(questionCount);
+}
+
+// startButton.addEventListener("click", () => {
+//     startContainer.addEventListener.add("hide");
+//     questionContainer.classList.remove("hide");
+//     initial();
+// });
+
+window.onload = () => {
+    startContainer.classList.remove("hide");
+    questionContainer.classList.add("hide");
+};
