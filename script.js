@@ -204,7 +204,7 @@ function initial() {
 //     initial();
 // });
 
-window.onload = () => {
-    startContainer.classList.remove("hide");
-    questionContainer.classList.add("hide");
-};
+// window.onload = () => {
+//     startContainer.classList.remove("hide");
+//     questionContainer.classList.add("hide");
+// };
